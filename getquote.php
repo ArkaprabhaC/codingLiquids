@@ -91,16 +91,16 @@
           <div class="col-2">
             <ul>
               <li><a href="index.php">Home</a></li>
-              <li><a href="comingsoon.html">What We Do</a></li>
-          <!--     <li><a href="comingsoon.html">Portfolio</a></li> -->
+              <li><a href="comingsoon.php">What We Do</a></li>
+          <!--     <li><a href="comingsoon.php">Portfolio</a></li> -->
 
           </ul>
       </div>
       <div class="col-2">
           <ul>
-            <li><a href="comingsoon.html">Team</a></li>
-              <li><a href="comingsoon.html">Events</a></li>
-          <!--    <li><a href="comingsoon.html">Career</a></li>  -->
+            <li><a href="comingsoon.php">Team</a></li>
+              <li><a href="comingsoon.php">Events</a></li>
+          <!--    <li><a href="comingsoon.php">Career</a></li>  -->
 
             </ul>
           </div>
@@ -195,16 +195,16 @@
       <div class="row">
         <div class="col-3">
           <ul>
-            <li><a href="comingsoon.html">Coding Liquids</a></li>
-            <li><a href="comingsoon.html">Portfolio</a></li>
-            <li><a href="comingsoon.html">Team</a></li>
+            <li><a href="comingsoon.php">Coding Liquids</a></li>
+            <li><a href="comingsoon.php">Portfolio</a></li>
+            <li><a href="comingsoon.php">Team</a></li>
         </ul>
     </div>
     <div class="col-3">
         <ul>
-            <li><a href="comingsoon.html">What We Do</a></li>
-            <li><a href="comingsoon.html">Events</a></li>
-            <li><a href="comingsoon.html">Career</a></li>
+            <li><a href="comingsoon.php">What We Do</a></li>
+            <li><a href="comingsoon.php">Events</a></li>
+            <li><a href="comingsoon.php">Career</a></li>
           </ul>
         </div>
         <div class="col-3">

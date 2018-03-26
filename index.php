@@ -31,16 +31,16 @@
                     <div class="col-2">
                         <ul>
                           <li><a href="index.php">Home</a></li>
-                            <li><a href="comingsoon.html">What We Do</a></li>
-                        <!--     <li><a href="comingsoon.html">Portfolio</a></li> -->
+                            <li><a href="comingsoon.php">What We Do</a></li>
+                        <!--     <li><a href="comingsoon.php">Portfolio</a></li> -->
 
                         </ul>
                     </div>
                     <div class="col-2">
                         <ul>
-                          <li><a href="comingsoon.html">Team</a></li>
-                            <li><a href="comingsoon.html">Events</a></li>
-                        <!--    <li><a href="comingsoon.html">Career</a></li>  -->
+                          <li><a href="comingsoon.php">Team</a></li>
+                            <li><a href="comingsoon.php">Events</a></li>
+                        <!--    <li><a href="comingsoon.php">Career</a></li>  -->
                         </ul>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                         <h5>WHAT WE DO</h5>
                         <h2>Design &amp; Development</h2>
                         <p>We are the liquids which help you to reduce the friction between your dreams and reality </p>
-                        <a href="comingsoon.html" class="call-to-action">Our Services</a>
+                        <a href="comingsoon.php" class="call-to-action">Our Services</a>
                     </div>
                     <div class="col-2">
                         <img src="img/cap.png" alt="">
@@ -138,16 +138,16 @@
                 <div class="row">
                     <div class="col-3">
                         <ul>
-                            <li><a href="comingsoon.html">Coding Liquids</a></li>
-                            <li><a href="comingsoon.html">Portfolio</a></li>
-                            <li><a href="comingsoon.html">Team</a></li>
+                            <li><a href="comingsoon.php">Coding Liquids</a></li>
+                            <li><a href="comingsoon.php">Portfolio</a></li>
+                            <li><a href="comingsoon.php">Team</a></li>
                         </ul>
                     </div>
                     <div class="col-3">
                         <ul>
-                            <li><a href="comingsoon.html">What We Do</a></li>
-                            <li><a href="comingsoon.html">Events</a></li>
-                            <li><a href="comingsoon.html">Career</a></li>
+                            <li><a href="comingsoon.php">What We Do</a></li>
+                            <li><a href="comingsoon.php">Events</a></li>
+                            <li><a href="comingsoon.php">Career</a></li>
                         </ul>
                     </div>
                     <div class="col-3">
