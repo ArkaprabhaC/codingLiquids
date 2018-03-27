@@ -31,7 +31,7 @@
                     <div class="col-2">
                         <ul>
                           <li><a href="comingsoon.php">Team</a></li>
-                            <li><a href="comingsoon.php">Events</a></li>
+                            <li><a href="events.php">Events</a></li>
                         <!--    <li><a href="comingsoon.php">Career</a></li>  -->
                         </ul>
                     </div>

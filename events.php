@@ -37,7 +37,7 @@
       <div class="col-2">
           <ul>
             <li><a href="comingsoon.php">Team</a></li>
-              <li><a href="comingsoon.php">Events</a></li>
+              <li><a href="events.php">Events</a></li>
           <!--    <li><a href="comingsoon.php">Career</a></li>  -->
 
             </ul>
@@ -46,7 +46,7 @@
 
         <div class="get-quote">
             <h5>Have a project in mind?</h5>
-            <a href="" class="call-to-action">Lets Talk</a>
+            <a href="getquote.php" class="call-to-action">Lets Talk</a>
         </div>
         <div class="social">
             <div class="icon-wrapper"><a href=""> <img src="img/insta.svg" alt="Instagram Icon"></a> </div>
@@ -60,8 +60,8 @@
 
     <div class="hero-img">
       <div class="container">
-        <h2>Events and workshops.</h2>
-        <p>Find an event near you and register yourself before the seats are booked.</p>
+        <h2>Events and workshops</h2>
+        <!--<p>Find an event near you and register yourself before the seats are booked.</p>-->
       </div>
       </div>
 
@@ -71,17 +71,18 @@
 <div class="card">
 <div class="event-content">
   <h4>Cyber Awareness Programme</h4>
-  <p class="date"> 31st March and 1st June.</p>
-  <a href="" class="call-to-action">Register Now/See details</a>
+  <p class="date"> 31st March and 1st April.</p>
+  <h6>Insight on Malware Trends, Identity Theft & Protection, Introduction to Anonymizers, TAIL System, G-Zapper, Password, MITM & Replay Attack Countermeasures, Stats on Financial Loss.Introduction to Viruses, Indications & Recovery, Ransomware, Miners, Worms, Spywares, Trojans, Wiretapping, Lawful Interception, NSA PRISM, Social Engineering, Wireless Attacks, Countermeasures & Defence on Mobile Platforms.Backdooring Mobile & PC platforms, Insights on privacy & information protection on Social Media Platforms such as Facebook, WhatsApp, Instagram, etc.Introduction to Network Infrastructure, Wi-Fi Threat Management, Android Rooting & iOS Jailbreak, Introduction to VM Ware, Kali Linux, Metasploit, OS Breaching, Home Automation & Security Enhancement, Distribution of Freeware used during Events.</h6>
+  <a href="https://goo.gl/forms/TrMshG1DF4HIkrni1" class="call-to-action" >Register Now</a>
 </div>
 </div>
-<div class="card">
+<!--<div class="card">
 <div class="event-content">
   <h4>Cyber Awareness Programme</h4>
   <p class="date"> 31st March and 1st June.</p>
   <a href="" class="call-to-action">Register Now/See details</a>
 </div>
-</div>
+</div>-->
             
 
     </div>
@@ -99,7 +100,7 @@
     <div class="col-3">
         <ul>
             <li><a href="comingsoon.php">What We Do</a></li>
-            <li><a href="comingsoon.php">Events</a></li>
+            <li><a href="events.php">Events</a></li>
             <li><a href="comingsoon.php">Career</a></li>
           </ul>
         </div>
