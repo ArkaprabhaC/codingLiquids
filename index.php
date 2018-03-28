@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-control" content="no-cache">
     <title>Coding Liquids</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/grid.css">
@@ -152,7 +153,7 @@
                     </div>
                     <div class="col-3">
                         <p>Address: Newtown, Kolkata-700156</p>
-                        <p>+91 987654321</p>
+                        <p>+91 8017742989</p>
                         <div class="social">
                             <div class="icon-wrapper"><a href=""> <img src="img/insta.svg" alt="Instagram Icon"></a> </div>
                             <div class="icon-wrapper"><a href=""><img src="img/fb.svg" alt="Facebook Icon"></a></div>

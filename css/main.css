@@ -506,11 +506,6 @@ font-weight: 500;
       line-height: 2.5rem;
     }
 }
-.row img{
-    margin-left: auto;
-	margin-right: auto;
-	display: none;
-}
 .g-recaptcha{
     display: block;
     margin: auto;
