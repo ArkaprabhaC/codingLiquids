@@ -71,6 +71,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/main.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
   <!---content to be displayed after loading-->
@@ -182,6 +183,11 @@
               <textarea name="message" rows="4"  placeholder="Type Your Message" title="Tell us about your business problems, your revenue objections or your current conversion rate"></textarea>
             </div>
           </div>
+
+                <div class="row">
+                    <div class="g-recaptcha" data-sitekey="6Lf6ZU8UAAAAAH4u9xtpiFM8KrDzLzt-Yvj6Ewas"></div>
+                </div>
+
           <div class="row">
             <input type="submit" name="action" id="submit" onclick="showText()">
           </div>

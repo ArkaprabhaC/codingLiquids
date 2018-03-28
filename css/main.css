@@ -511,3 +511,7 @@ font-weight: 500;
 	margin-right: auto;
 	display: none;
 }
+.g-recaptcha{
+    display: block;
+    margin: auto;
+}
