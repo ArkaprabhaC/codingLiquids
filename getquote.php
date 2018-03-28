@@ -1,63 +1,79 @@
 <?php
   if(isset($_POST['action'])){
-      $name = $_POST['name'];
-      $email= $_POST['email'];
-      $options = $_POST['options'];
-      
-      $budgetlv = $_POST['budgetlv'];
-      $budgetuv = $_POST['budgetuv'];
-      $referral = $_POST['ref'];
-      
-      $message = $_POST['message'];
-      $optionsVal="";
-      
-      switch ($options) {
-        case 'Choice 1':
-            $optionsVal = "Web Development" ;
-            break;
-        case 'Choice 2':
-            $optionsVal = "App Development" ;
-            break;
-        case 'Choice 3':
-            $optionsVal = "UX/UI and Business Design" ;
-            break;
-        case 'Choice 4':
-            $optionsVal = "Social Media Marketing" ;
-            break;
-       }
-      /*echo "name is ".$name."<br>";
-      echo "name is ".$email."<br>";
-      echo "name is ".$optionsVal."<br>";
-      
-      echo "name is ".$budgetuv."<br>";
-      echo "name is ".$budgetlv."<br>";
-      
-      echo "name is ".$message."<br>";*/
-      $to="sagnikbhattacharya1506@gmail.com";
-      $subject = "New client message.";
-      $body =  "Client's name is ".$name."\n\n";
-      $body .= "Client's Intention: ".$optionsVal."\n\n";
-      $body .= "Client's Budget Lower Bound: ".$budgetlv."\n\n";
-      $body .= "Client's Budget Upper Bound: ".$budgetuv."\n\n";
-      $body .= "Referral: ".$referral."\n\n";
-      $body .= "Message: \n\n".$message;
-      
-      $from = "From: ".$email; 
-    if (mail($to, $subject, $body, $from)) {
-        header("Location: getquote.php?mail=success");
-    } else {
-        header("Location: getquote.php?mail=failure");
-     }
+      if ($_POST['g-recaptcha-response'] != ''){
+          $name = $_POST['name'];
+          $email= $_POST['email'];
+          $options = $_POST['options'];
+
+          $budgetlv = $_POST['budgetlv'];
+          $budgetuv = $_POST['budgetuv'];
+          $referral = $_POST['ref'];
+
+          $message = $_POST['message'];
+          $optionsVal="";
+          $captcha=$_POST['g-recaptcha-response'];
+
+          switch ($options) {
+              case 'Choice 1':
+                  $optionsVal = "Web Development" ;
+                  break;
+              case 'Choice 2':
+                  $optionsVal = "App Development" ;
+                  break;
+              case 'Choice 3':
+                  $optionsVal = "UX/UI and Business Design" ;
+                  break;
+              case 'Choice 4':
+                  $optionsVal = "Social Media Marketing" ;
+                  break;
+          }
+          /*echo "name is ".$name."<br>";
+          echo "name is ".$email."<br>";
+          echo "name is ".$optionsVal."<br>";
+
+          echo "name is ".$budgetuv."<br>";
+          echo "name is ".$budgetlv."<br>";
+
+          echo "name is ".$message."<br>";*/
+          $to="arkoprabhachatterjee@gmail.com";//sagnikbhattacharya1506@gmail.com
+          $subject = "New client message.";
+          $body =  "Client's name is ".$name."\n\n";
+          $body .= "Client's Intention: ".$optionsVal."\n\n";
+          $body .= "Client's Budget Lower Bound: ".$budgetlv."\n\n";
+          $body .= "Client's Budget Upper Bound: ".$budgetuv."\n\n";
+          $body .= "Referral: ".$referral."\n\n";
+          $body .= "Message: \n\n".$message;
+
+          //$from = "From: ".$email;
+
+
+          $secretKey = "6Lf6ZU8UAAAAAH7VSKjPncgYXEfu-GDLTwqFKvXv";  //auth token
+          $ip = $_SERVER['REMOTE_ADDR']; //Get the ip of the client.
+          $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+          $responseKeys = json_decode($response,true);
+          if($responseKeys["success"]==true) {
+              if (mail($to, $subject, $body, $email)) {
+                  header("Location: getquote.php?mail=success");
+              } else {
+                  header("Location: getquote.php?mail=failure");
+              }
+          } else {
+              echo '<h2>Some error occured.</h2>';
+          }
+      }else{
+          echo "<script type='text/javascript'>alert('Please do the Captcha check to prove you\'re not a bot!');</script>";
+      }
+
       
   }
    
   if(isset($_GET['mail'])){
-      if($_GET['mail']=='success'){
-          echo "<script type='text/javascript'>alert('Thank you. Your Mesage has been received.');</script>";
-      }
-      if($_GET['mail']=='failure'){
-          echo "<script type='text/javascript'>alert('Some error occured. Try again later.');</script>";
-      }
+     if($_GET['mail']=='success'){
+         echo "<script type='text/javascript'>alert('Thank you. Your Mesage has been received.');</script>";
+    }
+    if($_GET['mail']=='failure'){
+       echo "<script type='text/javascript'>alert('Some error occured. Try again later.');</script>";
+   }
   }
 
 ?>
