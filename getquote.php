@@ -35,7 +35,7 @@
           echo "name is ".$budgetlv."<br>";
 
           echo "name is ".$message."<br>";*/
-          $to="arkoprabhachatterjee@gmail.com";//sagnikbhattacharya1506@gmail.com
+          $to="sagnikbhattacharya1506@gmail.com";
           $subject = "New client message.";
           $body =  "Client's name is ".$name."\n\n";
           $body .= "Client's Intention: ".$optionsVal."\n\n";
