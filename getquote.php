@@ -136,12 +136,12 @@
               <div class="row">
                 <div class="col-2">
                 <div class="form-element"><label for="name">Your Name</label>
-                <input type="text" name="name" placeholder="Type Your name"></div>
+                <input type="text" name="name" placeholder="Type Your name" required autofocus></div>
               </div>
               <div class="col-2">
               <div class="form-element">
                 <label for="name">Your Email</label>
-                <input type="text" name="email" placeholder="Type Your email">
+                <input type="email" name="email" placeholder="Type Your email"  required>
               </div>
             </div>
           </div>
@@ -162,24 +162,24 @@
             <div class="row">
                 <div class="col-2">
                   <label for="budget lower end">Lower Value(&#8377)</label>
-                  <input type="text" name="budgetlv" placeholder="15000">
+                  <input type="number" name="budgetlv" placeholder="15000" title="Enter least amount your are willing to spend">
                 </div>
                 <div class="col-2">
                   <label for="budget upper end">Upper Value(&#8377)</label>
-                  <input type="text" name="budgetuv" placeholder="20000">
+                  <input type="number" name="budgetuv" placeholder="20000" title="Enter the maximum amount you can spent. This can be of same amount as the least.">
               </div>
             </div>
           </div>
           <div class="row">
               <div class="form-element">
                   <label for="ref">Refferal Link (if any)</label>
-                  <input type="text" name="ref" placeholder="Type Your Refferal">
+                  <input type="text" name="ref" placeholder="Type Your Refferal" title="Where did you hear about us?">
               </div>
           </div>
           <div class="form-element">
             <div class="row">
               <label class="message-label" for="textarea">Message:</label>
-              <textarea name="message" rows="4"  placeholder="Type Your Message"></textarea>
+              <textarea name="message" rows="4"  placeholder="Type Your Message" title="Tell us about your business problems, your revenue objections or your current conversion rate"></textarea>
             </div>
           </div>
           <div class="row">
