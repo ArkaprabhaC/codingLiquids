@@ -75,7 +75,7 @@
                 <div class="container">
                     <h5>WELCOME.</h5>
                     <h1>CODING <br>LIQUIDS </h1>
-                    <p>We develop the best websites and mobile apps with state of the art security.</p>
+                    <p>We develop the best websites and mobile apps with state-of-the-art security.</p>
                     <a href="getquote.php" class="call-to-action">Start a Project</a>
                 </div>
             </header>
@@ -84,7 +84,7 @@
                     <div class="col-2">
                         <h5>WHAT WE DO</h5>
                         <h2>Design &amp; Development</h2>
-                        <p>We are the liquids which help you to reduce the friction between your dreams and reality </p>
+                        <p>Outstand your business with a website and the Liquids. We here at Coding Liquids help reduce the friction betweeen your dreams and reality. </p>
                         <a href="comingsoon.php" class="call-to-action">Our Services</a>
                     </div>
                     <div class="col-2">
