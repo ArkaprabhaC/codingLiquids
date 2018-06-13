@@ -1,3 +1,37 @@
+<?php include "admin/db_conn.php"; ?>
+<?php
+    /**
+     * Created by PhpStorm.
+     * User: arko
+     * Date: 13/6/18
+     * Time: 8:47 PM
+     */
+
+    /** this file is used to
+     *  specify the bringing of specific element from the table
+     */
+    if(isset($_GET['event'])) {
+        $pname = $_GET['event'];
+        $query_index = "SELECT * FROM posts WHERE program_name = '{$pname}'";
+        $index_result = mysqli_query($conn, $query_index);
+        if (!$index_result) {
+            die("Cannot execute SQL Query. Contact webmaster. Error- " . mysqli_error($conn));
+        }
+        while ($row = mysqli_fetch_assoc($index_result)) {
+            $pname2 = $row['program_name'];
+            $prog_start_date = $row['program_start_date'];
+            $prog_end_date = $row['program_end_date'];
+            $prog_venue = $row['program_venue'];
+            $prog_link = $row['register_link'];
+            $prog_detail = $row['program_detail'];
+            $posting_date = $row['posting_date'];
+            $post_author = "ArkoTest"; //Remove/modify post author when adding sessions and auth
+        }
+    }else{
+        $pname = "Events and workshops";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +95,7 @@
 
     <div class="hero-img">
       <div class="container">
-        <h2>Events and workshops</h2>
+        <h2><?php echo $pname; ?></h2>
         <!--<p>Find an event near you and register yourself before the seats are booked.</p>-->
       </div>
       </div>
@@ -69,14 +103,40 @@
 
       <section id="events">
         <div class="container">
-<div class="card">
-<div class="event-content">
-  <h4>Cyber Awareness Programme</h4>
-  <p class="date"> 31st March and 1st April.</p>
-  <h6>Insight on Malware Trends, Identity Theft & Protection, Introduction to Anonymizers, TAIL System, G-Zapper, Password, MITM & Replay Attack Countermeasures, Stats on Financial Loss.Introduction to Viruses, Indications & Recovery, Ransomware, Miners, Worms, Spywares, Trojans, Wiretapping, Lawful Interception, NSA PRISM, Social Engineering, Wireless Attacks, Countermeasures & Defence on Mobile Platforms.Backdooring Mobile & PC platforms, Insights on privacy & information protection on Social Media Platforms such as Facebook, WhatsApp, Instagram, etc.Introduction to Network Infrastructure, Wi-Fi Threat Management, Android Rooting & iOS Jailbreak, Introduction to VM Ware, Kali Linux, Metasploit, OS Breaching, Home Automation & Security Enhancement, Distribution of Freeware used during Events.</h6>
-  <a href="https://goo.gl/forms/TrMshG1DF4HIkrni1" class="call-to-action" >Register Now</a>
-</div>
-</div>
+            <!--<div class="card">
+            <div class="event-content">
+              <h4>Cyber Awareness Programme</h4>
+              <p class="date"> 31st March and 1st April.</p>
+              <h6>Insight on Malware Trends, Identity Theft & Protection, Introduction to Anonymizers, TAIL System, G-Zapper, Password, MITM & Replay Attack Countermeasures, Stats on Financial Loss.Introduction to Viruses, Indications & Recovery, Ransomware, Miners, Worms, Spywares, Trojans, Wiretapping, Lawful Interception, NSA PRISM, Social Engineering, Wireless Attacks, Countermeasures & Defence on Mobile Platforms.Backdooring Mobile & PC platforms, Insights on privacy & information protection on Social Media Platforms such as Facebook, WhatsApp, Instagram, etc.Introduction to Network Infrastructure, Wi-Fi Threat Management, Android Rooting & iOS Jailbreak, Introduction to VM Ware, Kali Linux, Metasploit, OS Breaching, Home Automation & Security Enhancement, Distribution of Freeware used during Events.</h6>
+              <a href="https://goo.gl/forms/TrMshG1DF4HIkrni1" class="call-to-action" >Register Now</a>
+            </div>
+            </div>-->
+
+            <?php
+            if(isset($_GET['event'])) {
+                echo '<h1>Hola</h1>';
+            }else{
+                $query_fetch = "SELECT * FROM posts";
+                $fetch_result = mysqli_query($conn, $query_fetch);
+                while ($row = mysqli_fetch_assoc($fetch_result)) {
+                    $reg_link = $row['register_link'];
+                    $program_name = $row['program_name'];
+                    echo "
+                      <div class='card'>
+                         <div class='event-content'>
+                            <h4>{$row['program_name']}</h4>
+                            <p class='date'>{$row['program_start_date']} &#8210; {$row['program_end_date']}</p>
+                            <p class='date'>Venue : {$row['program_venue']}</p>
+                            <h6>{$row['program_detail']}</h6>
+                            <a href='events.php?event={$program_name}' class='call-to-action' >View Details</a>
+                         </div>
+                      </div>
+                   ";
+                }
+            }
+
+
+            ?>
 <!--<div class="card">
 <div class="event-content">
   <h4>Cyber Awareness Programme</h4>
