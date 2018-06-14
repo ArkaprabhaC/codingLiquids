@@ -18,13 +18,23 @@
             die("Cannot execute SQL Query. Contact webmaster. Error- " . mysqli_error($conn));
         }
         while ($row = mysqli_fetch_assoc($index_result)) {
-            $pname2 = $row['program_name'];
-            $prog_start_date = $row['program_start_date'];
-            $prog_end_date = $row['program_end_date'];
+
+            $date = new DateTime($row['program_start_date']);
+            $start_date_pretty = $date->format('d M Y');
+
+            //$prog_end_date = $row['program_end_date'];
+
+            $date = new DateTime($row['program_end_date']);
+            $end_date_pretty = $date->format('d M Y');
+
             $prog_venue = $row['program_venue'];
             $prog_link = $row['register_link'];
             $prog_detail = $row['program_detail'];
-            $posting_date = $row['posting_date'];
+
+            $date = new DateTime($row['posting_date']);
+            $posting_date_pretty = $date->format('d M Y');
+
+            //$posting_date = $row['posting_date'];
             $post_author = "ArkoTest"; //Remove/modify post author when adding sessions and auth
         }
     }else{
@@ -113,26 +123,58 @@
             </div>-->
 
             <?php
+
             if(isset($_GET['event'])) {
-                echo '<h1>Hola</h1>';
+                /*
+                 * These lines of code is used for the event details page
+                 * that one can access when he clicks on "view details" button
+                 * on the main events.php page.
+                 */
+                echo
+                   "<h2>{$start_date_pretty} &#8210; {$end_date_pretty} </h2>
+                    <h3>9:00 PM &#8210 5:00 PM</h3>
+                    <br/>
+                    <h3><span class='highlight'>Venue:</span> {$prog_venue}</h3> 
+                    <br/>
+                    <h3>Details:</h3>
+                    <br/>
+                    <p>
+                       {$prog_detail}
+                    </p> 
+                   <small>-Posted by {$post_author} on {$posting_date_pretty}</small>
+                   <br/>
+                   <br/>
+                   <a href='{$prog_link}' class='call-to-action' >Register Now</a>";
+
             }else{
+                /*
+                 * Next few lines of code is for the main event.php page where
+                 * the cards show up.
+                 */
                 $query_fetch = "SELECT * FROM posts";
                 $fetch_result = mysqli_query($conn, $query_fetch);
-                while ($row = mysqli_fetch_assoc($fetch_result)) {
-                    $reg_link = $row['register_link'];
-                    $program_name = $row['program_name'];
-                    echo "
+                if(mysqli_num_rows($fetch_result)===0){
+                    echo '<h2>No events are coming up</h2>';
+                    echo '<p>Check this space back soon!</p>';
+                }else{
+                    while ($row = mysqli_fetch_assoc($fetch_result)) {
+                        $reg_link = $row['register_link'];
+                        $program_name = $row['program_name'];
+                        $detail = substr($row['program_detail'], 0, 200)."...";
+                        echo "
                       <div class='card'>
                          <div class='event-content'>
                             <h4>{$row['program_name']}</h4>
                             <p class='date'>{$row['program_start_date']} &#8210; {$row['program_end_date']}</p>
                             <p class='date'>Venue : {$row['program_venue']}</p>
-                            <h6>{$row['program_detail']}</h6>
+                            <h6>{$detail}</h6>
                             <a href='events.php?event={$program_name}' class='call-to-action' >View Details</a>
                          </div>
                       </div>
                    ";
+                    }
                 }
+
             }
 
 

@@ -441,6 +441,27 @@ font-weight: 500;
   max-width: 900px;
 }
 
+/**** events Page Styles***/
+#events{
+    padding-top: 1.5rem;
+}
+#events h2{
+    font-size: 3.5rem;
+}
+#events h3{
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+}
+#events p{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 0;
+}
+.highlight{
+    border-bottom: 5px solid blue;
+    line-height: 2.5rem;
+}
+/**** events Page Styles***/
 
 
 /**** responsive ****/
@@ -466,6 +487,22 @@ font-weight: 500;
     #team .members h5{
       font-size: 1.25rem;
       line-height: 1.25rem;
+    }
+    #events h2{
+        font-size: 2.5rem;
+    }
+    #events h3{
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+    #events p{
+        font-size: 1.1rem;
+        font-weight: 300;
+        margin-top: 0;
+    }
+    .highlight{
+        border-bottom: 5px solid blue;
+        line-height: 2.5rem;
     }
 }
 
@@ -506,6 +543,22 @@ font-weight: 500;
     .hero-img h2{
       font-size: 2.25rem;
       line-height: 2.5rem;
+    }
+    #events h2{
+        font-size: 1.2rem;
+
+    }
+    #events h3{
+        font-size: 1.1rem;
+    }
+    #events p{
+        font-size: 1.1rem;
+        font-weight: 300;
+        margin-top: 0;
+    }
+    .highlight{
+        border-bottom: 5px solid blue;
+        line-height: 2.5rem;
     }
 }
 .g-recaptcha{

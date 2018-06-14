@@ -9,7 +9,7 @@ Tip 1: you can change the color of the sidebar using: data-color="blue | azure |
 
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="#" class="simple-text">Give Logo here</a>
+            <a href="#" class="simple-text">Coding Liquids</a>
         </div>
 
         <ul class="nav">
