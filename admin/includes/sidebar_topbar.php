@@ -1,3 +1,4 @@
+
 <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
 
     <!--
@@ -14,7 +15,7 @@ Tip 1: you can change the color of the sidebar using: data-color="blue | azure |
 
         <ul class="nav">
             <li>
-                <a href="index.php">
+                <a href="../admin/dashboard.php">
                     <i class="pe-7s-graph"></i>
                     <p>Dashboard</p>
                 </a>
@@ -26,13 +27,13 @@ Tip 1: you can change the color of the sidebar using: data-color="blue | azure |
                 </a>
             </li>
             <li>
-                <a href="add_event.php">
+                <a href="../admin/add_event.php">
                     <i class="pe-7s-note2"></i>
                     <p>Add Events</p>
                 </a>
             </li>
             <li>
-                <a href="remove_event.php">
+                <a href="../admin/remove_event.php">
                     <i class="pe-7s-note2"></i>
                     <p>Remove Events</p>
                 </a>
@@ -52,7 +53,7 @@ Tip 1: you can change the color of the sidebar using: data-color="blue | azure |
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <span class="navbar-brand">Caption</span>
+                <span class="navbar-brand">Welcome, <?php echo $_SESSION["user_name"]?></span>
             </div>
             <div class="collapse navbar-collapse">
 
@@ -64,7 +65,7 @@ Tip 1: you can change the color of the sidebar using: data-color="blue | azure |
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="includes/logout.php">
                             <p>Log out</p>
                         </a>
                     </li>

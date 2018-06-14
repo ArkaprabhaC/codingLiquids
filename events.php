@@ -154,7 +154,7 @@
                 $query_fetch = "SELECT * FROM posts";
                 $fetch_result = mysqli_query($conn, $query_fetch);
                 if(mysqli_num_rows($fetch_result)===0){
-                    echo '<h2>No events are coming up</h2>';
+                    echo '<h2>No events coming up</h2>';
                     echo '<p>Check this space back soon!</p>';
                 }else{
                     while ($row = mysqli_fetch_assoc($fetch_result)) {
