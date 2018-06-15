@@ -1,4 +1,4 @@
-<?php include "admin/db_conn.php"; ?>
+<?php include "admin/includes/db_conn.php"; ?>
 <?php
     /**
      * Created by PhpStorm.

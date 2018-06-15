@@ -1,4 +1,6 @@
 <?php include "db_conn.php"; ?>
+<?php include "pwdEncryption.php" ?>
+
 <?php
 session_start();
    /*
@@ -8,8 +10,15 @@ if(isset($_POST['signInBtn'])){
     $admin_email =  mysqli_real_escape_string($conn , $_POST['adminEmail']);
     $admin_pwd = mysqli_real_escape_string($conn , $_POST['adminPwd']);
 
-    $signin_query = "SELECT * FROM users WHERE user_email = '{$admin_email}' and user_pwd = '$admin_pwd'";
+
+    /*sign in queries*/
+    /*It encrypts the user entered password at login*/
+    
+    $encrypted_atlogin_pwd = crypt($admin_pwd, $hashF_and_salt);
+
+    $signin_query = "SELECT * FROM users WHERE user_email = '{$admin_email}' AND user_pwd = '{$encrypted_atlogin_pwd}'";
     $signin_result = mysqli_query($conn,$signin_query);
+
     if(mysqli_num_rows($signin_result)===0){
         echo 'Invalid username or password';
     }else{
@@ -23,6 +32,7 @@ if(isset($_POST['signInBtn'])){
             $_SESSION["country"] = $row['country'];
             $_SESSION["user_bio"] = $row['user_bio'];
         }
+
         header('Location: ../dashboard.php');
 
     }

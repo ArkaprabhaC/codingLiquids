@@ -2,7 +2,7 @@
 
 <?php
    /*
-    * Script for removing of selected post from the DB
+    * Script for removing the selected post from the DB
     */
    $show_posts_query = "SELECT * FROM posts";
    $show_posts_result = mysqli_query($conn,$show_posts_query);
