@@ -52,7 +52,7 @@
                 $prog_venue = $_POST['program-venue'];
                 $prog_link = $_POST['register-link'];
                 $prog_detail = $_POST['program-detail'];
-                $post_author = "ArkoTest"; //Remove/modify post author when adding sessions and auth
+                $post_author = $_SESSION["first_name"]; //Remove/modify post author when adding sessions and auth
 
                 $query = "INSERT INTO posts(program_name, program_start_date, program_end_date, program_venue, program_detail, register_link, author, 
 posting_date) VALUES('{$prog_name}','{$prog_start_date}','{$prog_end_date}','{$prog_venue}','{$prog_detail}','{$prog_link}',
@@ -61,6 +61,20 @@ posting_date) VALUES('{$prog_name}','{$prog_start_date}','{$prog_end_date}','{$p
                 $result = mysqli_query($conn,$query);
                 if(!$result) {
                     die("Error.Contact Webmaster.Error Description: " . mysqli_error($conn));
+                }else{
+                    echo '<script type="text/javascript">
+                        
+                            $.notify({
+                               
+                                message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+                
+                            },{
+                                type: "success",
+                                timer: 4000
+                            });
+                
+                      
+                    </script>';
                 }
 
            }

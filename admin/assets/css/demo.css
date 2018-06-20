@@ -49,7 +49,7 @@
     width: 100%;
     bottom: 10px;
 }
-.sidebar .nav > li.active-pro a{
+.sidebar .nav > li.active-pro span{
     background: rgba(255, 255, 255, 0.14);
     opacity: 1;
     color: #FFFFFF;

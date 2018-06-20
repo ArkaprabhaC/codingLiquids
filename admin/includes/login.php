@@ -13,7 +13,8 @@ if(isset($_POST['signInBtn'])){
 
     /*sign in queries*/
     /*It encrypts the user entered password at login*/
-    
+    /*hashF_and_salt value is coming from pwdEncryption.php*/
+
     $encrypted_atlogin_pwd = crypt($admin_pwd, $hashF_and_salt);
 
     $signin_query = "SELECT * FROM users WHERE user_email = '{$admin_email}' AND user_pwd = '{$encrypted_atlogin_pwd}'";

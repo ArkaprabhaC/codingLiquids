@@ -35,7 +35,7 @@
             $posting_date_pretty = $date->format('d M Y');
 
             //$posting_date = $row['posting_date'];
-            $post_author = "ArkoTest"; //Remove/modify post author when adding sessions and auth
+            $post_author = $row['author'];
         }
     }else{
         $pname = "Events and workshops";

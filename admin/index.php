@@ -17,11 +17,14 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/signin.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
 </head>
 
 <body class="text-center">
 <form class="form-signin" action="includes/login.php" method="post">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Administrator Sign In</h1>
 
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" name="adminEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -34,10 +37,15 @@
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>-->
-
+    <br/>
+    <a href="/codingLiquids/admin/reset_password" class="text-center">Forget Password</a>
+    <br/><br/>
     <button class="btn btn-lg btn-primary btn-block" name="signInBtn" type="submit">Sign in</button>
 
-    <p class="mt-5 mb-3 text-muted">&copy; <?php echo date("Y"); ?></p>
+
+    <div class="mt-5 mb-3 text-muted">
+       <p class="site-footer__fineprint" id="fineprint">Made with <i class="far fa-heart" style="color: red; font-size:1.5em;"></i> by Discrete</p>
+    </div>
 
 
 </form>
