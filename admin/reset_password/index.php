@@ -121,7 +121,7 @@
 
                           </div>
                           <div class="form-group">
-                            <input name="submit" class="btn btn-lg btn-primary btn-block" value="Submit" type="submit">
+                            <input name="submit" class="btn btn-lg btn-primary btn-block" value="Submit" type="submit" disabled>
                           </div>
 
 
@@ -134,7 +134,7 @@
                 </div>
               </div>
     	</div>
-        <div style="font-size:3.5em; color:limegreen" class="text-center loader">
+        <div style="font-size:3.5em; color:limegreen" class="text-center loader" style="display: none;">
             <i class="far fa-compass fa-spin"></i>
         </div>
         <p id="responseText" class="text-center"></p>

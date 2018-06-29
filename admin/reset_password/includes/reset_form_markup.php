@@ -23,7 +23,7 @@ echo '
                                     </div>
 
                                     <div class="form-group">
-                                        <input name="submit" class="btn btn-lg btn-primary btn-block submit_btn" value="Reset Password" type="submit">
+                                        <input name="submit" class="btn btn-lg btn-primary btn-block submit_btn" value="Reset Password" type="submit" disabled>
                                     </div>
 
                                 </form>

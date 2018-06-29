@@ -6,9 +6,9 @@ session_start();
    /*
     * Login in and session start for particular user script
     */
-if(isset($_POST['signInBtn'])){
-    $admin_email =  mysqli_real_escape_string($conn , $_POST['adminEmail']);
-    $admin_pwd = mysqli_real_escape_string($conn , $_POST['adminPwd']);
+if(isset($_POST['email']) && isset($_POST['password'])){
+    $admin_email =  mysqli_real_escape_string($conn , $_POST['email']);
+    $admin_pwd = mysqli_real_escape_string($conn , $_POST['password']);
 
 
     /*sign in queries*/
@@ -20,8 +20,8 @@ if(isset($_POST['signInBtn'])){
     $signin_query = "SELECT * FROM users WHERE user_email = '{$admin_email}' AND user_pwd = '{$encrypted_atlogin_pwd}'";
     $signin_result = mysqli_query($conn,$signin_query);
 
-    if(mysqli_num_rows($signin_result)===0){
-        echo 'Invalid username or password';
+    if(mysqli_num_rows($signin_result)==0){
+        exit(json_encode(array('message'=>'Invalid password or email','status' => 1)));
     }else{
 
         while ($row = mysqli_fetch_assoc($signin_result)) {
@@ -34,7 +34,8 @@ if(isset($_POST['signInBtn'])){
             $_SESSION["user_bio"] = $row['user_bio'];
         }
 
-        header('Location: ../dashboard.php');
+        //header('Location: ../dashboard.php');
+        exit(json_encode(array('message'=>'Redirecting....','status' => 0)));
 
     }
 }

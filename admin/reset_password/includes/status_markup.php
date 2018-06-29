@@ -10,7 +10,7 @@ echo '<html lang="en">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700" rel="stylesheet" type="text/css">
     <style>
         @import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
-
+        .site-header{padding:20px 0 0 !important;} 
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">
@@ -47,7 +47,7 @@ echo '<html lang="en">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700" rel="stylesheet" type="text/css">
     <style>
         @import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
-
+        .site-header{padding:20px 0 0 !important;} 
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">

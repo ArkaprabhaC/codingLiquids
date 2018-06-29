@@ -23,14 +23,22 @@
 </head>
 
 <body class="text-center">
-<form class="form-signin" action="includes/login.php" method="post">
+
+<div class="form-signin">
+
+
+    <div class="alert alert-danger invalid-username-password" style="display: none;">
+
+    </div>
+
+
     <h1 class="h3 mb-3 font-weight-normal">Administrator Sign In</h1>
 
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="adminEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
 
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" name="adminPwd" class="form-control" placeholder="Password" required>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
     <!--<div class="checkbox mb-3">
         <label>
@@ -40,7 +48,7 @@
     <br/>
     <a href="/codingLiquids/admin/reset_password" class="text-center">Forget Password</a>
     <br/><br/>
-    <button class="btn btn-lg btn-primary btn-block" name="signInBtn" type="submit">Sign in</button>
+    <input class="btn btn-lg btn-primary btn-block" value='Sign in' type="button"></input>
 
 
     <div class="mt-5 mb-3 text-muted">
@@ -48,15 +56,46 @@
     </div>
 
 
-</form>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+</div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('.btn').click(function () {
+            $(this).val('......');
+
+            $.ajax({
+                url: 'includes/login.php',
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    email: $("#inputEmail").val(),
+                    password : $("#inputPassword").val()
+                },
+                success:function(response){
+                    if(response.status===0){
+                        window.location = "./dashboard.php";
+                    }else if(response.status){
+                        $('.invalid-username-password').css({"display": "block"}).html(response.message);
+                    }
+                    $('.btn').val('Sign in');
+                },
+                error: function (response) {
+                    $('.invalid-username-password').css({"display": "block"}).html("Some error occured.");
+                    $('.btn').val('Sign in');
+
+                }
+            });
+        });
+    });
+
+</script>
 </body>
 </html>
