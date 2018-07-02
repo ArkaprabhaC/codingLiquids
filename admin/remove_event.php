@@ -1,25 +1,4 @@
 <?php include "includes/db_conn.php" ?>
-
-<?php
-   /*
-    * Script for removing the selected post from the DB
-    */
-   $show_posts_query = "SELECT * FROM posts";
-   $show_posts_result = mysqli_query($conn,$show_posts_query);
-
-   if(isset($_POST['removeBtn'])){
-       $selectedItem = $_POST['all_posts_select'];
-       $remove_query ="DELETE FROM posts WHERE program_name = '{$selectedItem}'";
-       $remove_result = mysqli_query($conn, $remove_query);
-       if(!$remove_result){
-           die("Error. Contact webmaster. Error Description: ".mysqli_error($conn));
-       }
-       header('Location: remove_event.php');
-   }
-
-?>
-
-
 <?php include "includes/head_body_static.php" ?>
 
 
@@ -28,6 +7,30 @@
 <div class="wrapper">
 
     <?php include "includes/sidebar_topbar.php";?>
+
+    <?php
+        /*
+         * Script for removing the selected post from the DB
+         */
+        $show_posts_query = "SELECT * FROM posts";
+        $show_posts_result = mysqli_query($conn,$show_posts_query);
+
+        if(isset($_POST['removeBtn'])){
+            $selectedItem = $_POST['all_posts_select'];
+            $remove_query ="DELETE FROM posts WHERE program_name = '{$selectedItem}'";
+            $remove_result = mysqli_query($conn, $remove_query);
+            if(!$remove_result){
+                die("Error. Contact webmaster. Error Description: ".mysqli_error($conn));
+            }
+            header('Location: remove_event.php?remove_post=success');
+        }
+
+        if(isset($_GET['remove_post']) && $_GET['remove_post']==='success'){
+            echo '<div class="alert alert-danger invalid-username-password"><h4 class="text-center" style="font-weight: bold;line-height: 2rem;padding-top: 1rem;">Post Deleted!</h4></div>';
+        }
+
+    ?>
+
 
     <div class="container ">
       <form method="post">

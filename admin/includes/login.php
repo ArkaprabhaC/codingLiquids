@@ -25,6 +25,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     }else{
 
         while ($row = mysqli_fetch_assoc($signin_result)) {
+            $_SESSION['user_id'] = $row['user_id'];
             $_SESSION["user_name"] = $row['user_name'];
             $_SESSION["user_email"] = $row['user_email'];
             $_SESSION["user_pwd"] = $row['user_pwd'];

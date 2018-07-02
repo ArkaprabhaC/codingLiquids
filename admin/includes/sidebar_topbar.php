@@ -21,7 +21,7 @@ Tip 1: you can change the color of the sidebar using: data-color="blue | azure |
                 </a>
             </li>
             <li>
-                <a href="user.html">
+                <a href="user.php">
                     <i class="pe-7s-user"></i>
                     <p>User Profile</p>
                 </a>
@@ -60,7 +60,7 @@ Tip 1: you can change the color of the sidebar using: data-color="blue | azure |
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="">
+                        <a href="user.php">
                             <p>Account</p>
                         </a>
                     </li>

@@ -4,7 +4,7 @@
  * to gain access to admin panel
  * */
 session_start();
-
+$_SESSION['user_id'] = null;
 $_SESSION["user_name"] = null;
 $_SESSION["user_email"] = null;
 $_SESSION["user_pwd"] = null;

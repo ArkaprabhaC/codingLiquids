@@ -7,6 +7,28 @@
 
     <?php include "includes/sidebar_topbar.php";?>
 
+    <?php
+    if(isset($_POST['submit'])){
+        $prog_name = $_POST['program-name'];
+        $prog_start_date = $_POST['program-start-date'];
+        $prog_end_date = $_POST['program-end-date'];
+        $prog_venue = $_POST['program-venue'];
+        $prog_link = $_POST['register-link'];
+        $prog_detail = $_POST['program-detail'];
+        $post_author = $_SESSION["first_name"]; //Remove/modify post author when adding sessions and auth
+
+        $query = "INSERT INTO posts(program_name, program_start_date, program_end_date, program_venue, program_detail, register_link, author, 
+posting_date) VALUES('{$prog_name}','{$prog_start_date}','{$prog_end_date}','{$prog_venue}','{$prog_detail}','{$prog_link}',
+'{$post_author}',now())";
+
+        $result = mysqli_query($conn,$query);
+        if(!$result) {
+            die("Error.Contact Webmaster.Error Description: " . mysqli_error($conn));
+        }else{
+            echo '<div class="alert alert-success invalid-username-password"><h4 class="text-center" style="font-weight: bold;line-height: 2rem;padding-top: 1rem;">Post Created!</h4></div>';
+        }
+    }
+    ?>
 
         <!--Main Content for add events-->
         <div class="container-fluid">
@@ -42,50 +64,6 @@
                 <!--To Do: Add user name who is posting the event and cur date of posting-->
             </form>
         </div>
-
-
-        <?php
-           if(isset($_POST['submit'])){
-                $prog_name = $_POST['program-name'];
-                $prog_start_date = $_POST['program-start-date'];
-                 $prog_end_date = $_POST['program-end-date'];
-                $prog_venue = $_POST['program-venue'];
-                $prog_link = $_POST['register-link'];
-                $prog_detail = $_POST['program-detail'];
-                $post_author = $_SESSION["first_name"]; //Remove/modify post author when adding sessions and auth
-
-                $query = "INSERT INTO posts(program_name, program_start_date, program_end_date, program_venue, program_detail, register_link, author, 
-posting_date) VALUES('{$prog_name}','{$prog_start_date}','{$prog_end_date}','{$prog_venue}','{$prog_detail}','{$prog_link}',
-'{$post_author}',now())";
-
-                $result = mysqli_query($conn,$query);
-                if(!$result) {
-                    die("Error.Contact Webmaster.Error Description: " . mysqli_error($conn));
-                }else{
-                    echo '<script type="text/javascript">
-                        
-                            $.notify({
-                               
-                                message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-                
-                            },{
-                                type: "success",
-                                timer: 4000
-                            });
-                
-                      
-                    </script>';
-                }
-
-           }
-
-
-        ?>
-
-
-
-
-
 
     </div>
 </div>
